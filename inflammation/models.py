@@ -70,7 +70,7 @@ def patient_normalise(data):
 # TODO(lesson-design) Add Patient class
 
 class Observation:
-    def __init__(self, day, value):
+    def __init__(self,  value, day):
         self.day = day
         self.value = value
 
@@ -86,11 +86,14 @@ class Person:
 
 class Patient(Person):
     """A patient in an inflammation study."""
-    def __init__(self, name):
+    def __init__(self, name, observations=None):
         super().__init__(name)
-        self.observations = []
 
-    def add_observation(self, value, day=None):
+        self.observations = []
+        if self.observations is not None:
+            self.observations = observations
+
+    def add_observation(self, value, day=None ):
         if day is None:
             try:
                 day = self.observations[-1].day + 1
@@ -98,20 +101,21 @@ class Patient(Person):
             except IndexError:
                 day = 0
 
-        new_observation = Observation(day, value)
+        new_observation = Observation(value, day)
 
         self.observations.append(new_observation)
         return new_observation
 
 
-alice = Patient('Alice')
-print(alice)
 
-obs = alice.add_observation(3)
-print(obs)
+#alice = Patient('Alice')
+#print(alice)
 
-bob = Person('Bob')
-print(bob)
+#obs = alice.add_observation(3)
+#print(obs)
+
+#bob = Person('Bob')
+#print(bob)
 
 #obs = bob.add_observation(4)
 #print(obs)
