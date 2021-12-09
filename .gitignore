@@ -8,6 +8,9 @@
 # Output files
 *.png
 
+tests/
+patient.json
+
 # Python runtime
 *.pyc
 *.egg-info
