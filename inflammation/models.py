@@ -70,7 +70,7 @@ def patient_normalise(data):
 # TODO(lesson-design) Add Patient class
 
 class Observation:
-    def __init__(self,  value, day):
+    def __init__(self, day, value):
         self.day = day
         self.value = value
 
@@ -101,7 +101,7 @@ class Patient(Person):
             except IndexError:
                 day = 0
 
-        new_observation = Observation(value, day)
+        new_observation = Observation(day, value)
 
         self.observations.append(new_observation)
         return new_observation

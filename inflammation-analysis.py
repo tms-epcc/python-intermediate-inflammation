@@ -60,6 +60,7 @@ if __name__ == "__main__":
         default=0,
         help='Which patient should be displayed?')
 
+
     args = parser.parse_args()
 
     main(args)
