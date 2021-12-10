@@ -44,5 +44,5 @@ where appropriate, be sure to credit those who have helped in the software’s d
 # Citation: 
 particularly for academic software, it’s a very good idea to specify a reference to an appropriate academic publication so other academics can cite use of the software in their own publications and media. You can do this within a separate CITATION text file within the repository’s root directory and link to it from the markdown
 
-#Licence: 
+# Licence: 
 a short description of and link to the software’s licence
